@@ -5,7 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.navigation
 import androidx.navigation.compose.composable
-import com.nathakusuma.composenavigationapp.ui.screens.PlaceholderHomeScreen
+import com.nathakusuma.composenavigationapp.ui.screens.HomeScreen
 import com.nathakusuma.composenavigationapp.ui.screens.SplashScreen
 
 @Composable
@@ -28,12 +28,9 @@ fun RootNavGraph(
             )
         }
 
-        // 2) Main graph (sementara)
-        navigation(
-            startDestination = Routes.HOME,
-            route = Routes.MAIN_GRAPH
-        ) {
-            composable(Routes.HOME) { PlaceholderHomeScreen() }
-        }
+        // 2) Main graph
+       composable(Routes.MAIN_GRAPH) {
+           MainScaffold()
+       }
     }
 }
