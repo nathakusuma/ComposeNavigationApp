@@ -5,6 +5,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.navigation
 import androidx.navigation.compose.composable
+import com.nathakusuma.composenavigationapp.ui.screens.PlaceholderHomeScreen
+import com.nathakusuma.composenavigationapp.ui.screens.SplashScreen
 
 @Composable
 fun RootNavGraph(
