@@ -1,15 +1,16 @@
 package com.nathakusuma.composenavigationapp.ui.screens
+
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Button
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+
 @Composable
-fun DetailScreen(navController: NavController, id: String?) {
+fun AddScreen(navController: NavController) {
     Column(
         Modifier
             .fillMaxSize()
@@ -17,14 +18,11 @@ fun DetailScreen(navController: NavController, id: String?) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text("Detail Item", style =
-            MaterialTheme.typography.headlineSmall)
-        Spacer(Modifier.height(12.dp))
-        Text("ID diterima: $id", style =
-            MaterialTheme.typography.bodyLarge)
-        Spacer(Modifier.height(20.dp))
+        Text("Add Screen (contoh form tambah data)", style =
+            MaterialTheme.typography.titleLarge)
+        Spacer(Modifier.height(16.dp))
         Button(onClick = { navController.popBackStack() }) {
-            Text("Kembali")
+            Text("Selesai (Kembali)")
         }
     }
 }

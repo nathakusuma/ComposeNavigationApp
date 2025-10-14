@@ -160,12 +160,12 @@ private fun AppDrawer(onNavigate: (String) -> Unit) {
 private fun MainNavHost(navController: NavHostController) {
     NavHost(navController, startDestination = Routes.HOME) {
         composable(Routes.HOME) { HomeScreen(navController) }
-//        composable("${Routes.DETAIL}/{id}") { backStack ->
-//            val id = backStack.arguments?.getString("id")
-//            DetailScreen(navController, id)
-//        }
-//        composable(Routes.PROFILE) { ProfileScreen() }
-//        composable(Routes.SETTINGS) { SettingsScreen() }
-//        composable(Routes.ADD) { AddScreen(navController) }
+        composable("${Routes.DETAIL}/{id}") { backStack ->
+            val id = backStack.arguments?.getString("id")
+            DetailScreen(navController, id)
+        }
+        composable(Routes.PROFILE) { ProfileScreen() }
+        composable(Routes.SETTINGS) { SettingsScreen() }
+        composable(Routes.ADD) { AddScreen(navController) }
     }
 }
