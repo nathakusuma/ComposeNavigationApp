@@ -5,7 +5,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -72,9 +74,9 @@ fun MainScaffold() {
                             }
                         }) {
                             Icon(
-                                Icons.Filled.Home,
+                                Icons.Filled.Menu,
                                 contentDescription = "Menu"
-                            ) // ikon bebas, hanya pemicu drawer
+                            )
                         }
                     }
                 )
@@ -141,17 +143,26 @@ private fun AppDrawer(onNavigate: (String) -> Unit) {
         NavigationDrawerItem(
             label = { Text("Home") },
             selected = false,
-            onClick = { onNavigate(Routes.HOME) }
+            onClick = { onNavigate(Routes.HOME) },
+            icon = { Icon(Icons.Filled.Home, contentDescription = "Home") }
         )
         NavigationDrawerItem(
             label = { Text("Profile") },
             selected = false,
-            onClick = { onNavigate(Routes.PROFILE) }
+            onClick = { onNavigate(Routes.PROFILE) },
+            icon = { Icon(Icons.Filled.Person, contentDescription = "Profile") }
         )
         NavigationDrawerItem(
             label = { Text("Settings") },
             selected = false,
-            onClick = { onNavigate(Routes.SETTINGS) }
+            onClick = { onNavigate(Routes.SETTINGS) },
+            icon = { Icon(Icons.Filled.Settings, contentDescription = "Settings") }
+        )
+        NavigationDrawerItem(
+            label = { Text("Search") },
+            selected = false,
+            onClick = { onNavigate(Routes.SEARCH) },
+            icon = { Icon(Icons.Filled.Search, contentDescription = "Search") }
         )
     }
 }
@@ -167,5 +178,6 @@ private fun MainNavHost(navController: NavHostController) {
         composable(Routes.PROFILE) { ProfileScreen() }
         composable(Routes.SETTINGS) { SettingsScreen() }
         composable(Routes.ADD) { AddScreen(navController) }
+        composable(Routes.SEARCH) { SearchScreen() }
     }
 }
